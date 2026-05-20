@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import logo from '/logo/ats-logo.png'
+import { ThemeToggle } from './ThemeToggle'
 
 const navLinks = [
   { label: 'Home', href: '#home', icon: Home },
@@ -70,12 +71,12 @@ function Navbar({ whatsappLink }) {
   }
 
   return (
-    <header className="sticky top-0 z-[260] border-b border-[rgba(245,184,65,0.28)] bg-[#06152f]">
-      <div className="border-b border-[rgba(245,184,65,0.35)] bg-[#06152f]">
+    <header className="sticky top-0 z-[260] border-b border-[rgba(245,184,65,0.28)] bg-[color:var(--bg-primary)]">
+      <div className="border-b border-[rgba(245,184,65,0.35)] bg-[color:var(--bg-primary)]">
         <div className="mx-auto w-full max-w-[1440px] px-6">
-          <div className="hide-scrollbar flex items-center gap-3 overflow-x-auto py-2 text-[10px] font-semibold text-[#c7d2fe] sm:text-[11px] min-[1201px]:overflow-visible">
-            <span className="flex items-center gap-1 whitespace-nowrap text-[#f5b841]">
-              <Star size={12} className="text-[#f5b841]" /> Refreshment at Your Tour
+          <div className="hide-scrollbar flex items-center gap-3 overflow-x-auto py-2 text-[10px] font-semibold text-[color:var(--text-muted)] sm:text-[11px] min-[1201px]:overflow-visible">
+            <span className="flex items-center gap-1 whitespace-nowrap text-[color:var(--gold-500)]">
+              <Star size={12} className="text-[color:var(--gold-500)]" /> Refreshment at Your Tour
             </span>
             <span className="whitespace-nowrap">KFC Refreshment Free of Cost</span>
             <span className="flex items-center gap-1 whitespace-nowrap">
@@ -94,9 +95,9 @@ function Navbar({ whatsappLink }) {
         </div>
       </div>
 
-      <div className="bg-[#081b3d]">
+      <div className="bg-[color:var(--bg-secondary)]">
         <div className="mx-auto w-full max-w-[1440px] px-6 py-3">
-          <div className="rounded-2xl border border-[rgba(245,184,65,0.26)] bg-[#081b3d] px-4 py-3 shadow-[0_18px_30px_-24px_rgba(0,0,0,0.9)]">
+          <div className="rounded-2xl border border-[color:var(--card-border)] bg-[color:var(--bg-secondary)] px-4 py-3 shadow-[0_18px_30px_-24px_rgba(0,0,0,0.35)]">
             <div className="hidden min-[1201px]:grid min-[1201px]:grid-cols-[minmax(280px,auto)_minmax(0,1fr)_auto] min-[1201px]:items-center min-[1201px]:gap-3">
               <a href="#home" className="relative min-w-0 shrink-0">
                 <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-[rgba(245,184,65,0.15)] to-[rgba(245,184,65,0.05)] blur-lg opacity-60 -z-10" />
@@ -123,21 +124,25 @@ function Navbar({ whatsappLink }) {
                           <Icon
                             size={13}
                             className={
-                              isActive ? 'text-[#f5b841]' : 'text-[#c7d2fe] transition group-hover:text-[#f5b841]'
+                              isActive
+                                ? 'text-[color:var(--gold-500)]'
+                                : 'text-[color:var(--text-muted)] transition group-hover:text-[color:var(--gold-500)]'
                             }
                           />
                           <span
                             className={`mt-1 text-center text-[10px] font-bold leading-3 ${
                               isActive
-                                ? 'text-[#f5b841]'
-                                : 'text-[#c7d2fe] transition group-hover:text-[#ffffff]'
+                                ? 'text-[color:var(--gold-500)]'
+                                : 'text-[color:var(--text-muted)] transition group-hover:text-[color:var(--text-main)]'
                             }`}
                           >
                             {link.label}
                           </span>
                           <span
                             className={`mt-1 h-[2px] w-8 rounded-full transition ${
-                              isActive ? 'bg-[#f5b841]' : 'bg-transparent group-hover:bg-[rgba(245,184,65,0.4)]'
+                              isActive
+                                ? 'bg-[color:var(--gold-500)]'
+                                : 'bg-transparent group-hover:bg-[rgba(245,184,65,0.4)]'
                             }`}
                           />
                         </a>
@@ -148,6 +153,7 @@ function Navbar({ whatsappLink }) {
               </nav>
 
               <div className="flex shrink-0 items-center gap-2">
+                <ThemeToggle />
                 <a
                   href={whatsappLink}
                   target="_blank"
@@ -178,7 +184,7 @@ function Navbar({ whatsappLink }) {
 
                 <button
                   type="button"
-                  className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[rgba(245,184,65,0.5)] bg-[#081b3d] text-[#ffffff] transition hover:text-[#f5b841]"
+                  className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[rgba(245,184,65,0.5)] bg-[color:var(--bg-secondary)] text-[color:var(--text-main)] transition hover:text-[color:var(--gold-500)]"
                   onClick={() => setIsOpen((prev) => !prev)}
                   aria-expanded={isOpen}
                   aria-label="Toggle menu"
@@ -188,20 +194,25 @@ function Navbar({ whatsappLink }) {
               </div>
 
               <div className="mt-3 grid gap-2 min-[430px]:grid-cols-2">
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#16a34a] px-4 py-2.5 text-sm font-bold uppercase tracking-[0.05em] text-[#ffffff]"
-                >
-                  WhatsApp Booking
-                </a>
-                <a
-                  href="#booking"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#f5b841] px-4 py-2.5 text-sm font-bold uppercase tracking-[0.05em] text-[#06152f]"
-                >
-                  Book Now
-                </a>
+                <div className="min-[430px]:col-span-2 flex gap-2">
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 inline-flex items-center justify-center rounded-xl bg-[#16a34a] px-4 py-2.5 text-sm font-bold uppercase tracking-[0.05em] text-[#ffffff]"
+                  >
+                    WhatsApp Booking
+                  </a>
+                  <a
+                    href="#booking"
+                    className="flex-1 inline-flex items-center justify-center rounded-xl bg-[#f5b841] px-4 py-2.5 text-sm font-bold uppercase tracking-[0.05em] text-[#06152f]"
+                  >
+                    Book Now
+                  </a>
+                  <div className="shrink-0">
+                    <ThemeToggle />
+                  </div>
+                </div>
               </div>
 
               <AnimatePresence>
@@ -213,6 +224,10 @@ function Navbar({ whatsappLink }) {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.24, ease: 'easeInOut' }}
                   >
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <span className="text-xs font-semibold text-[color:var(--text-muted)]">Theme</span>
+                      <ThemeToggle />
+                    </div>
                     <nav className="grid gap-2">
                       {navLinks.map((link) => {
                         const Icon = link.icon
@@ -225,11 +240,14 @@ function Navbar({ whatsappLink }) {
                             onClick={() => handleNavClick(link.href)}
                             className={`flex items-center gap-3 rounded-xl border px-3 py-3 text-sm font-semibold transition ${
                               isActive
-                                ? 'border-[rgba(245,184,65,0.55)] bg-[rgba(245,184,65,0.12)] text-[#f5b841]'
-                                : 'border-[rgba(199,210,254,0.22)] bg-[rgba(8,27,61,0.75)] text-[#c7d2fe] hover:border-[rgba(245,184,65,0.45)] hover:text-[#ffffff]'
+                                ? 'border-[rgba(245,184,65,0.55)] bg-[rgba(245,184,65,0.12)] text-[color:var(--gold-500)]'
+                                : 'border-[rgba(199,210,254,0.22)] bg-[color:var(--glass-bg)] text-[color:var(--text-muted)] hover:border-[rgba(245,184,65,0.45)] hover:text-[color:var(--text-main)]'
                             }`}
                           >
-                            <Icon size={16} className={isActive ? 'text-[#f5b841]' : 'text-[#c7d2fe]'} />
+                            <Icon
+                              size={16}
+                              className={isActive ? 'text-[color:var(--gold-500)]' : 'text-[color:var(--text-muted)]'}
+                            />
                             {link.label}
                           </a>
                         )
