@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import logo from '/logo/ats-logo.png'
 
 const navLinks = [
   { label: 'Home', href: '#home', icon: Home },
@@ -96,12 +97,14 @@ function Navbar({ whatsappLink }) {
       <div className="bg-[#081b3d]">
         <div className="mx-auto w-full max-w-[1440px] px-6 py-3">
           <div className="rounded-2xl border border-[rgba(245,184,65,0.26)] bg-[#081b3d] px-4 py-3 shadow-[0_18px_30px_-24px_rgba(0,0,0,0.9)]">
-            <div className="hidden min-[1201px]:grid min-[1201px]:grid-cols-[minmax(320px,auto)_minmax(0,1fr)_auto] min-[1201px]:items-center min-[1201px]:gap-3">
-              <a href="#home" className="min-w-[320px]">
-                <p className="font-heading text-lg font-extrabold uppercase tracking-[0.18em] text-[#ffffff]">
-                  Arham Transport Services
-                </p>
-                <p className="text-xs font-semibold text-[#c7d2fe]">Premium Intercity Travel Pakistan</p>
+            <div className="hidden min-[1201px]:grid min-[1201px]:grid-cols-[minmax(280px,auto)_minmax(0,1fr)_auto] min-[1201px]:items-center min-[1201px]:gap-3">
+              <a href="#home" className="relative min-w-0 shrink-0">
+                <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-[rgba(245,184,65,0.15)] to-[rgba(245,184,65,0.05)] blur-lg opacity-60 -z-10" />
+                <img
+                  src={logo}
+                  alt="Arham Transport Services Logo"
+                  className="h-auto max-h-[70px] w-auto object-contain drop-shadow-lg"
+                />
               </a>
 
               <nav className="min-w-0 overflow-hidden">
@@ -163,12 +166,14 @@ function Navbar({ whatsappLink }) {
             </div>
 
             <div className="min-[1201px]:hidden">
-              <div className="flex items-start justify-between gap-3">
-                <a href="#home" className="min-w-0">
-                  <p className="truncate font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-[#ffffff] sm:text-base">
-                    Arham Transport Services
-                  </p>
-                  <p className="truncate text-xs font-semibold text-[#c7d2fe]">Premium Intercity Travel Pakistan</p>
+              <div className="flex items-center justify-between gap-3">
+                <a href="#home" className="relative min-w-0 flex-1">
+                  <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-[rgba(245,184,65,0.1)] to-[rgba(245,184,65,0.03)] blur-md opacity-50 -z-10" />
+                  <img
+                    src={logo}
+                    alt="Arham Transport Services Logo"
+                    className="h-auto max-h-[50px] sm:max-h-[55px] w-auto object-contain drop-shadow-lg"
+                  />
                 </a>
 
                 <button
