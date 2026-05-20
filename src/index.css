@@ -6,6 +6,7 @@
 
 :root {
   /* Dark Theme (Default) */
+  color-scheme: dark;
   --navy-900: #071739;
   --navy-800: #0a1f44;
   --navy-700: #0d2a5c;
@@ -13,30 +14,36 @@
   --gold-600: #e0a12d;
   --text-main: #ffffff;
   --text-muted: #c7d2fe;
+  --text-body: rgba(199, 210, 254, 0.92);
   --bg-primary: #06152f;
   --bg-secondary: #081b3d;
   --bg-tertiary: #07173a;
   --card-bg: rgba(10, 31, 68, 0.65);
   --card-border: rgba(245, 184, 65, 0.26);
   --glass-bg: rgba(10, 31, 68, 0.75);
+  --shadow-card: 0 22px 44px -32px rgba(0, 0, 0, 0.85);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* Light Theme */
 :root[data-theme='light'] {
   color-scheme: light;
-  --navy-900: #ffffff;
-  --navy-800: #f8f9fa;
-  --navy-700: #f0f2f5;
+  --navy-900: #0b132b;
+  --navy-800: #0b132b;
+  --navy-700: #0b132b;
   --gold-500: #f5b841;
   --gold-600: #e0a12d;
-  --text-main: #06152f;
-  --text-muted: #4a5568;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f2f5;
-  --card-bg: rgba(245, 248, 250, 0.8);
-  --card-border: rgba(245, 184, 65, 0.2);
-  --glass-bg: rgba(255, 255, 255, 0.95);
+  --text-main: #0b132b;
+  --text-body: #475569;
+  --text-muted: #64748b;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef2ff;
+  --bg-tertiary: #eef2ff;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.86);
+  --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 /* Dark theme (explicit) */
@@ -76,9 +83,9 @@
   /* Light theme background */
   :root[data-theme='light'] body {
     background:
-      radial-gradient(circle at 12% 8%, rgba(245, 184, 65, 0.08), transparent 28%),
-      radial-gradient(circle at 90% 0%, rgba(245, 248, 250, 0.95), transparent 42%),
-      linear-gradient(165deg, #ffffff 0%, #f8f9fa 52%, #f5f7fa 100%);
+      radial-gradient(circle at 12% 8%, rgba(245, 184, 65, 0.12), transparent 30%),
+      radial-gradient(circle at 92% 0%, rgba(238, 242, 255, 0.95), transparent 44%),
+      linear-gradient(165deg, var(--bg-primary) 0%, rgba(238, 242, 255, 0.9) 54%, var(--bg-primary) 100%);
   }
 
   a {
@@ -124,11 +131,9 @@
   }
 
   :root[data-theme='light'] .glass-panel {
-    border-color: rgba(245, 184, 65, 0.16);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 249, 250, 0.92));
-    box-shadow:
-      0 20px 40px -30px rgba(6, 21, 47, 0.18),
-      0 0 0 1px rgba(6, 21, 47, 0.06) inset;
+    border-color: var(--card-border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
+    box-shadow: var(--shadow-card);
   }
 
   .glass-soft {
@@ -138,9 +143,16 @@
   }
 
   :root[data-theme='light'] .glass-soft {
-    border-color: rgba(6, 21, 47, 0.08);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 14px 28px -22px rgba(6, 21, 47, 0.18);
+    border-color: var(--card-border);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow-card);
+  }
+
+  :root[data-theme='light'] .glass-panel:hover,
+  :root[data-theme='light'] .glass-soft:hover {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px rgba(245, 184, 65, 0.18) inset;
   }
 
   .title-eyebrow {
@@ -157,7 +169,7 @@
 
   .section-description {
     @apply text-sm sm:text-base;
-    color: var(--text-muted);
+    color: var(--text-body);
   }
 
   .nav-link {
@@ -201,10 +213,10 @@
   }
 
   :root[data-theme='light'] .primary-btn {
-    background: linear-gradient(135deg, rgba(6, 21, 47, 0.92), rgba(13, 42, 92, 0.92));
+    background: linear-gradient(135deg, #0b132b 0%, #0d2a5c 100%);
     box-shadow:
-      0 18px 32px -24px rgba(6, 21, 47, 0.35),
-      0 0 0 1px rgba(245, 184, 65, 0.08) inset;
+      0 18px 32px -24px rgba(15, 23, 42, 0.28),
+      0 0 0 1px rgba(245, 184, 65, 0.12) inset;
   }
 
   .secondary-btn {
@@ -225,8 +237,8 @@
   :root[data-theme='light'] .secondary-btn {
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.92);
-    border-color: rgba(6, 21, 47, 0.12);
-    box-shadow: 0 14px 24px -20px rgba(6, 21, 47, 0.22);
+    border-color: var(--card-border);
+    box-shadow: var(--shadow-card);
   }
 
   :root[data-theme='light'] .secondary-btn:hover {
@@ -253,7 +265,8 @@
   :root[data-theme='light'] .ghost-btn {
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.86);
-    border-color: rgba(6, 21, 47, 0.14);
+    border-color: var(--card-border);
+    box-shadow: var(--shadow-card);
   }
 
   :root[data-theme='light'] .ghost-btn:hover {
@@ -283,9 +296,9 @@
   }
 
   :root[data-theme='light'] .form-input {
-    border-color: rgba(6, 21, 47, 0.16);
+    border-color: var(--card-border);
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 12px 20px -20px rgba(6, 21, 47, 0.22);
+    box-shadow: var(--shadow-card);
   }
 
   :root[data-theme='light'] .form-input::placeholder {

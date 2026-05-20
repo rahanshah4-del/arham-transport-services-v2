@@ -2,7 +2,7 @@ import { Moon, Sun, Laptop } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useState } from 'react'
 
-export function ThemeToggle() {
+export function ThemeToggle({ variant = 'default' }) {
   const { theme, resolvedTheme, toggleTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -20,7 +20,7 @@ export function ThemeToggle() {
         className="inline-flex items-center justify-center rounded-xl border px-3 py-2 transition hover:border-[rgba(245,184,65,0.7)] hover:text-[color:var(--gold-500)]"
         style={{
           borderColor: 'rgba(245,184,65,0.4)',
-          color: 'var(--text-muted)',
+          color: variant === 'navbar' ? '#c7d2fe' : 'var(--text-muted)',
           background: 'transparent',
         }}
         aria-label="Toggle theme"
@@ -36,7 +36,12 @@ export function ThemeToggle() {
           className="absolute right-0 top-full z-50 mt-2 w-48 overflow-hidden rounded-xl border shadow-lg"
           style={{
             borderColor: 'var(--card-border)',
-            background: resolvedTheme === 'light' ? 'rgba(255,255,255,0.98)' : 'rgba(8,27,61,0.92)',
+            background:
+              variant === 'navbar'
+                ? 'rgba(8,27,61,0.92)'
+                : resolvedTheme === 'light'
+                  ? 'rgba(255,255,255,0.98)'
+                  : 'rgba(8,27,61,0.92)',
             boxShadow:
               resolvedTheme === 'light'
                 ? '0 22px 40px -28px rgba(6,21,47,0.30)'
@@ -46,6 +51,8 @@ export function ThemeToggle() {
           {options.map((option) => {
             const Icon = option.icon
             const isSelected = theme === option.id
+            const baseText =
+              variant === 'navbar' ? '#c7d2fe' : resolvedTheme === 'light' ? 'var(--text-main)' : 'var(--text-main)'
 
             return (
               <button
@@ -57,7 +64,7 @@ export function ThemeToggle() {
                 }}
                 className="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold transition"
                 style={{
-                  color: isSelected ? 'var(--gold-500)' : 'var(--text-main)',
+                  color: isSelected ? 'var(--gold-500)' : baseText,
                   background: isSelected ? 'rgba(245,184,65,0.14)' : 'transparent',
                 }}
               >
