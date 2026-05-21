@@ -5,7 +5,6 @@ import ContactSection from './components/ContactSection'
 import FleetSection from './components/FleetSection'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
-import MobileBookingBar from './components/MobileBookingBar'
 import Navbar from './components/Navbar'
 import PartnersSection from './components/PartnersSection'
 import PriceEstimateSection from './components/PriceEstimateSection'
@@ -58,7 +57,6 @@ function App() {
         />
       </main>
       <Footer officeNumber={officeNumber} />
-      <MobileBookingBar />
     </div>
   )
 }
