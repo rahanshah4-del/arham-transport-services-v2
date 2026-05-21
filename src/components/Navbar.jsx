@@ -96,20 +96,20 @@ function Navbar({ whatsappLink }) {
       </div>
 
       <div className="bg-transparent">
-        <div className="mx-auto w-full max-w-[1440px] px-6 py-3">
-          <div className="rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#ffffff] px-4 py-3 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
-            <div className="hidden min-[1201px]:grid min-[1201px]:grid-cols-[minmax(280px,auto)_minmax(0,1fr)_auto] min-[1201px]:items-center min-[1201px]:gap-3">
+        <div className="mx-auto w-full max-w-[1440px] px-6 py-2">
+          <div className="rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#ffffff] px-4 py-2 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
+            <div className="hidden min-[1201px]:grid min-[1201px]:grid-cols-[minmax(160px,240px)_minmax(0,1fr)_auto] min-[1201px]:items-center min-[1201px]:gap-3">
               <a href="#home" className="relative min-w-0 shrink-0">
                 <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-[rgba(245,184,65,0.15)] to-[rgba(245,184,65,0.05)] blur-lg opacity-60 -z-10" />
                 <img
                   src={logo}
                   alt="Arham Transport Services Logo"
-                  className="h-auto max-h-[70px] w-auto object-contain drop-shadow-lg"
+                  className="h-auto max-h-[60px] w-auto object-contain drop-shadow-lg"
                 />
               </a>
 
               <nav className="min-w-0 overflow-hidden">
-                <ul className="flex items-start justify-center gap-0.5 whitespace-nowrap xl:gap-1">
+                <ul className="flex items-center justify-center gap-0.5 whitespace-nowrap xl:gap-1">
                   {navLinks.map((link) => {
                     const Icon = link.icon
                     const isActive = activeLink === link.href
@@ -119,16 +119,14 @@ function Navbar({ whatsappLink }) {
                         <a
                           href={link.href}
                           onClick={() => handleNavClick(link.href)}
-                          className="group flex w-[58px] flex-col items-center rounded-xl px-0.5 py-1 transition hover:bg-[rgba(245,184,65,0.1)] xl:w-[66px]"
+                          className="group flex w-[52px] flex-col items-center rounded-xl px-0.5 py-1 transition hover:bg-[rgba(245,184,65,0.1)] xl:w-[60px]"
                         >
                           <Icon
-                            size={13}
-                            className={
-                              isActive ? 'text-[#f5b841]' : 'text-[#64748b] transition group-hover:text-[#f5b841]'
-                            }
+                            size={12}
+                            className={isActive ? 'text-[#f5b841]' : 'text-[#64748b] transition group-hover:text-[#f5b841]'}
                           />
                           <span
-                            className={`mt-1 text-center text-[10px] font-bold leading-3 ${
+                            className={`mt-1 text-center text-[9px] font-bold leading-3 ${
                               isActive
                                 ? 'text-[#f5b841]'
                                 : 'text-[#64748b] transition group-hover:text-[#0b132b]'
@@ -155,13 +153,13 @@ function Navbar({ whatsappLink }) {
                   href={whatsappLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-[188px] shrink-0 items-center justify-center whitespace-nowrap rounded-2xl bg-[#22c55e] px-4 py-3 text-sm font-bold uppercase tracking-[0.05em] text-[#ffffff] transition hover:bg-[#16a34a]"
+                  className="inline-flex min-w-[140px] items-center justify-center whitespace-nowrap rounded-2xl bg-[#22c55e] px-3 py-2 text-sm font-bold uppercase tracking-[0.04em] text-[#ffffff] transition hover:bg-[#16a34a]"
                 >
                   WhatsApp Booking
                 </a>
                 <a
                   href="#booking"
-                  className="inline-flex w-[132px] shrink-0 items-center justify-center whitespace-nowrap rounded-2xl bg-[#f5b841] px-4 py-3 text-sm font-bold uppercase tracking-[0.05em] text-[#06152f] transition hover:bg-[#e0a12d]"
+                  className="inline-flex min-w-[110px] items-center justify-center whitespace-nowrap rounded-2xl bg-[#f5b841] px-3 py-2 text-sm font-bold uppercase tracking-[0.04em] text-[#06152f] transition hover:bg-[#e0a12d]"
                 >
                   Book Now
                 </a>
@@ -175,7 +173,7 @@ function Navbar({ whatsappLink }) {
                   <img
                     src={logo}
                     alt="Arham Transport Services Logo"
-                    className="h-auto max-h-[50px] sm:max-h-[55px] w-auto object-contain drop-shadow-lg"
+                    className="h-auto max-h-[48px] sm:max-h-[54px] w-auto object-contain drop-shadow-lg"
                   />
                 </a>
 
@@ -191,23 +189,23 @@ function Navbar({ whatsappLink }) {
               </div>
 
                   <div className="mt-3 grid gap-2 min-[430px]:grid-cols-2">
-                <div className="min-[430px]:col-span-2 flex gap-2">
-                  <a
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center rounded-xl bg-[#22c55e] px-4 py-2.5 text-sm font-bold uppercase tracking-[0.05em] text-[#ffffff]"
-                  >
-                    WhatsApp Booking
-                  </a>
-                  <a
-                    href="#booking"
-                    className="flex-1 inline-flex items-center justify-center rounded-xl bg-[#f5b841] px-4 py-2.5 text-sm font-bold uppercase tracking-[0.05em] text-[#06152f]"
-                  >
-                    Book Now
-                  </a>
+                  <div className="min-[430px]:col-span-2 flex gap-2">
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 inline-flex items-center justify-center rounded-xl bg-[#22c55e] px-4 py-2 text-sm font-bold uppercase tracking-[0.04em] text-[#ffffff]"
+                    >
+                      WhatsApp Booking
+                    </a>
+                    <a
+                      href="#booking"
+                      className="flex-1 inline-flex items-center justify-center rounded-xl bg-[#f5b841] px-4 py-2 text-sm font-bold uppercase tracking-[0.04em] text-[#06152f]"
+                    >
+                      Book Now
+                    </a>
+                  </div>
                 </div>
-              </div>
 
               <AnimatePresence>
                 {isOpen ? (
