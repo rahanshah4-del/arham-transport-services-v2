@@ -20,16 +20,16 @@ function PartnerCard({ partner }) {
   return (
     <article className="glass-soft blue-glow h-full min-w-0 rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-[rgba(245,184,65,0.5)]">
       <div className="flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[rgba(245,184,65,0.4)] bg-[rgba(245,184,65,0.12)] text-[#F5B841]">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[rgba(245,184,65,0.4)] bg-[rgba(245,184,65,0.12)] text-[color:var(--gold-500)]">
           <span className="font-heading text-sm font-extrabold">{partner.short}</span>
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[rgba(199,210,254,0.2)] bg-[rgba(10,31,68,0.7)] text-[#C7D2FE]">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-[#f8fafc] text-[color:var(--text-body)]">
           <Icon size={20} />
         </div>
       </div>
 
-      <h3 className="mt-4 break-words font-heading text-lg font-bold leading-snug text-[#FFFFFF]">{partner.name}</h3>
-      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#C7D2FE]">{partner.type}</p>
+      <h3 className="mt-4 break-words font-heading text-lg font-bold leading-snug text-[color:var(--text-main)]">{partner.name}</h3>
+      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--text-body)]">{partner.type}</p>
     </article>
   )
 }
@@ -46,7 +46,7 @@ function PartnersSection({ whatsappLink, phoneNumber }) {
           description="Trusted by leading companies, colleges, events and business groups."
         />
 
-        <div className="hidden overflow-hidden rounded-3xl border border-[rgba(245,184,65,0.2)] bg-[rgba(10,31,68,0.35)] p-4 lg:block">
+        <div className="hidden overflow-hidden rounded-3xl border border-[rgba(15,23,42,0.08)] bg-[rgba(255,255,255,0.72)] p-4 shadow-[0_10px_30px_rgba(15,23,42,0.08)] lg:block">
           <motion.div
             className="flex w-max gap-4"
             animate={{ x: ['0%', '-50%'] }}
@@ -73,7 +73,7 @@ function PartnersSection({ whatsappLink, phoneNumber }) {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-sm font-semibold leading-relaxed text-[#FFFFFF] sm:text-base">
+          <p className="text-sm font-semibold leading-relaxed text-[color:var(--text-main)] sm:text-base">
             Want transport service for your company, college or event? Contact us for monthly and
             event contracts.
           </p>

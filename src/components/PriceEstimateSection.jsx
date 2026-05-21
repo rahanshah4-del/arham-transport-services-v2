@@ -226,12 +226,12 @@ function PriceEstimateSection({ whatsappNumber }) {
               </div>
             </div>
 
-            <div className="mt-4 grid gap-2 text-sm text-[#FFFFFF]">
+            <div className="mt-4 grid gap-2 text-sm text-[color:var(--text-main)]">
               <p className="glass-soft">
-                <span className="font-semibold text-[#F5B841]">With Refreshment:</span> + Rs 2,000
+                <span className="font-semibold text-[color:var(--gold-500)]">With Refreshment:</span> + Rs 2,000
               </p>
               <p className="glass-soft">
-                <span className="font-semibold text-[#F5B841]">Without Refreshment:</span> Rs 0
+                <span className="font-semibold text-[color:var(--gold-500)]">Without Refreshment:</span> Rs 0
               </p>
             </div>
           </motion.div>
@@ -246,52 +246,52 @@ function PriceEstimateSection({ whatsappNumber }) {
             <p className="title-eyebrow inline-flex items-center gap-2">
               <Calculator size={14} /> Fare Breakdown
             </p>
-            <p className="mt-3 font-heading text-4xl font-extrabold text-[#FFFFFF] sm:text-5xl">
+            <p className="mt-3 font-heading text-4xl font-extrabold text-[color:var(--text-main)] sm:text-5xl">
               {breakdown ? currencyFormatter.format(breakdown.totalEstimatedFare) : 'Enter trip details'}
             </p>
 
-            <div className="mt-5 grid gap-3 text-sm text-[#C7D2FE]">
+            <div className="mt-5 grid gap-3 text-sm text-[color:var(--text-body)]">
               <div className="glass-soft">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Trip Details</p>
-                <p className="mt-1 text-[#FFFFFF]"><span className="font-semibold">From City:</span> {fromCity || 'N/A'}</p>
-                <p className="text-[#FFFFFF]"><span className="font-semibold">To City:</span> {toCity || 'N/A'}</p>
-                <p className="text-[#FFFFFF]"><span className="font-semibold">Entered KM:</span> {distanceKmInput || 'N/A'}</p>
-                <p className="text-[#FFFFFF]"><span className="font-semibold">Car Type:</span> {selectedCarType}</p>
-                <p className="text-[#FFFFFF]"><span className="font-semibold">Trip Type:</span> {tripType}</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Trip Details</p>
+                <p className="mt-1 text-[color:var(--text-main)]"><span className="font-semibold">From City:</span> {fromCity || 'N/A'}</p>
+                <p className="text-[color:var(--text-main)]"><span className="font-semibold">To City:</span> {toCity || 'N/A'}</p>
+                <p className="text-[color:var(--text-main)]"><span className="font-semibold">Entered KM:</span> {distanceKmInput || 'N/A'}</p>
+                <p className="text-[color:var(--text-main)]"><span className="font-semibold">Car Type:</span> {selectedCarType}</p>
+                <p className="text-[color:var(--text-main)]"><span className="font-semibold">Trip Type:</span> {tripType}</p>
               </div>
 
               <div className="glass-soft">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Per KM Rate</p>
-                <p className="mt-1 font-semibold text-[#FFFFFF]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Per KM Rate</p>
+                <p className="mt-1 font-semibold text-[color:var(--text-main)]">
                   {breakdown ? `${breakdown.appliedRatePerKm.toFixed(2)} PKR/km` : 'N/A'}
                 </p>
-                <p className="mt-2 text-[#FFFFFF]">
+                <p className="mt-2 text-[color:var(--text-main)]">
                   One Way: {vehicleRates ? vehicleRates.oneWayRate.toFixed(2) : 'N/A'} PKR/km
                 </p>
-                <p className="text-[#FFFFFF]">
+                <p className="text-[color:var(--text-main)]">
                   Return: {vehicleRates ? vehicleRates.returnRate.toFixed(2) : 'N/A'} PKR/km
                 </p>
               </div>
 
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="glass-soft">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Base fare</p>
-                  <p className="mt-1 font-semibold text-[#FFFFFF]">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Base fare</p>
+                  <p className="mt-1 font-semibold text-[color:var(--text-main)]">
                     {breakdown ? currencyFormatter.format(breakdown.baseFare) : 'N/A'}
                   </p>
                 </div>
 
                 <div className="glass-soft">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Refreshment charges</p>
-                  <p className="mt-1 font-semibold text-[#FFFFFF]">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Refreshment charges</p>
+                  <p className="mt-1 font-semibold text-[color:var(--text-main)]">
                     {breakdown ? currencyFormatter.format(breakdown.refreshmentCharges) : 'N/A'}
                   </p>
                 </div>
               </div>
 
               <div className="glass-soft">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Fare formula</p>
-                <p className="mt-1 break-words font-semibold text-[#FFFFFF]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Fare formula</p>
+                <p className="mt-1 break-words font-semibold text-[color:var(--text-main)]">
                   {breakdown
                     ? `Total = Base ${currencyFormatter.format(breakdown.baseFare)} + (${parsedDistanceKm} km x ${breakdown.appliedRatePerKm.toFixed(2)}/km) + ${currencyFormatter.format(breakdown.refreshmentCharges)}`
                     : 'Enter valid cities and KM to view formula'}
@@ -299,8 +299,8 @@ function PriceEstimateSection({ whatsappNumber }) {
               </div>
 
               <div className="glass-soft gold-glow">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Total estimated fare</p>
-                <p className="mt-1 font-heading text-2xl font-bold text-[#FFFFFF]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Total estimated fare</p>
+                <p className="mt-1 font-heading text-2xl font-bold text-[color:var(--text-main)]">
                   {breakdown ? currencyFormatter.format(breakdown.totalEstimatedFare) : 'N/A'}
                 </p>
               </div>
@@ -316,12 +316,12 @@ function PriceEstimateSection({ whatsappNumber }) {
             </div>
 
             {showValidation && !isEstimateValid ? (
-              <p className="mt-4 text-sm font-semibold text-[#F5B841]">
+              <p className="mt-4 text-sm font-semibold text-[color:var(--gold-500)]">
                 Please correct the highlighted fields to calculate and send estimate details.
               </p>
             ) : null}
 
-            <p className="mt-4 text-sm text-[#C7D2FE]">
+            <p className="mt-4 text-sm text-[color:var(--text-body)]">
               Final fare will be confirmed on call/WhatsApp after route verification.
             </p>
           </motion.div>

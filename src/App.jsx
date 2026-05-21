@@ -9,7 +9,6 @@ import MobileBookingBar from './components/MobileBookingBar'
 import Navbar from './components/Navbar'
 import PartnersSection from './components/PartnersSection'
 import PriceEstimateSection from './components/PriceEstimateSection'
-import RefreshmentSection from './components/RefreshmentSection'
 import ServicesSection from './components/ServicesSection'
 
 const phoneNumbers = [
@@ -46,17 +45,16 @@ function App() {
         <AboutSection />
         <ServicesSection />
         <FleetSection />
-        <RefreshmentSection />
         <CityBookingSection />
         <PriceEstimateSection whatsappNumber={whatsappNumber} />
         <BookingFormSection whatsappNumber={whatsappNumber} phoneNumber={primaryPhone.dial} />
+        <PartnersSection whatsappLink={whatsappLink} phoneNumber={primaryPhone.dial} />
         <ContactSection
           phoneNumbers={phoneNumbers}
           officeNumber={officeNumber}
           email={emailAddress}
           whatsappLink={whatsappLink}
         />
-        <PartnersSection whatsappLink={whatsappLink} phoneNumber={primaryPhone.dial} />
       </main>
       <Footer officeNumber={officeNumber} />
       <MobileBookingBar />

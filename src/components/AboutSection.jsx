@@ -45,11 +45,11 @@ function AboutSection() {
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.5, delay: 0.12 * index }}
               >
-                <div className="inline-flex rounded-xl border border-[rgba(245,184,65,0.35)] bg-[rgba(245,184,65,0.12)] p-2 text-[#F5B841]">
+                <div className="inline-flex rounded-xl border border-[rgba(245,184,65,0.35)] bg-[rgba(245,184,65,0.12)] p-2 text-[color:var(--gold-500)]">
                   <Icon size={20} />
                 </div>
-                <h3 className="mt-4 font-heading text-xl font-bold text-[#FFFFFF]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#C7D2FE]">{item.description}</p>
+                <h3 className="mt-4 font-heading text-xl font-bold text-[color:var(--text-main)]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[color:var(--text-body)]">{item.description}</p>
               </motion.article>
             )
           })}

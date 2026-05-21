@@ -144,19 +144,19 @@ function CoasterGalleryModal({ isOpen, onClose, images, title }) {
           >
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
               <div className="min-w-0">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5B841]">Coaster Gallery</p>
-                <h3 className="truncate font-heading text-lg font-bold text-[#FFFFFF] sm:text-2xl">{title}</h3>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--gold-500)]">Coaster Gallery</p>
+                <h3 className="truncate font-heading text-lg font-bold text-[color:var(--text-main)] sm:text-2xl">{title}</h3>
               </div>
 
               <div className="flex items-center gap-2">
-                <p className="rounded-lg border border-[rgba(245,184,65,0.35)] px-3 py-1 text-sm font-semibold text-[#FFFFFF]">
+                <p className="rounded-lg border border-[rgba(245,184,65,0.35)] px-3 py-1 text-sm font-semibold text-[color:var(--text-main)]">
                   {currentIndex + 1} / {totalImages}
                 </p>
 
                 <button
                   type="button"
                   onClick={() => setAutoSlide((previous) => !previous)}
-                  className="inline-flex items-center gap-1 rounded-lg border border-[rgba(245,184,65,0.45)] bg-[rgba(245,184,65,0.12)] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-[#F5B841] transition hover:bg-[rgba(245,184,65,0.2)]"
+                  className="inline-flex items-center gap-1 rounded-lg border border-[rgba(245,184,65,0.45)] bg-[rgba(245,184,65,0.12)] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-[color:var(--gold-500)] transition hover:bg-[rgba(245,184,65,0.2)]"
                 >
                   {autoSlide ? <Pause size={14} /> : <Play size={14} />}
                   {autoSlide ? 'Auto On' : 'Auto Off'}
@@ -165,7 +165,7 @@ function CoasterGalleryModal({ isOpen, onClose, images, title }) {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[rgba(245,184,65,0.45)] text-[#FFFFFF] transition hover:bg-[rgba(245,184,65,0.16)] hover:text-[#F5B841]"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[rgba(245,184,65,0.45)] text-[color:var(--text-main)] transition hover:bg-[rgba(245,184,65,0.16)] hover:text-[color:var(--gold-500)]"
                   aria-label="Close Coaster gallery"
                 >
                   <X size={18} />
@@ -177,7 +177,7 @@ function CoasterGalleryModal({ isOpen, onClose, images, title }) {
               <button
                 type="button"
                 onClick={goPrevious}
-                className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-[rgba(245,184,65,0.45)] bg-[rgba(6,21,47,0.86)] p-2 text-[#FFFFFF] transition hover:bg-[rgba(245,184,65,0.16)] hover:text-[#F5B841]"
+                className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-[rgba(245,184,65,0.45)] bg-[rgba(6,21,47,0.86)] p-2 text-[color:var(--text-main)] transition hover:bg-[rgba(245,184,65,0.16)] hover:text-[color:var(--gold-500)]"
                 aria-label="Previous coaster image"
               >
                 <ChevronLeft size={20} />
@@ -186,7 +186,7 @@ function CoasterGalleryModal({ isOpen, onClose, images, title }) {
               <button
                 type="button"
                 onClick={goNext}
-                className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-[rgba(245,184,65,0.45)] bg-[rgba(6,21,47,0.86)] p-2 text-[#FFFFFF] transition hover:bg-[rgba(245,184,65,0.16)] hover:text-[#F5B841]"
+                className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-[rgba(245,184,65,0.45)] bg-[rgba(6,21,47,0.86)] p-2 text-[color:var(--text-main)] transition hover:bg-[rgba(245,184,65,0.16)] hover:text-[color:var(--gold-500)]"
                 aria-label="Next coaster image"
               >
                 <ChevronRight size={20} />
@@ -304,7 +304,7 @@ function FleetSection() {
                           event.stopPropagation()
                           setIsCoasterGalleryOpen(true)
                         }}
-                        className="inline-flex items-center gap-1 rounded-full border border-[rgba(245,184,65,0.55)] bg-[rgba(6,21,47,0.88)] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-[#F5B841] transition hover:bg-[rgba(245,184,65,0.18)]"
+                        className="inline-flex items-center gap-1 rounded-full border border-[rgba(245,184,65,0.55)] bg-[rgba(6,21,47,0.88)] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-[color:var(--gold-500)] transition hover:bg-[rgba(245,184,65,0.18)]"
                       >
                         <Images size={14} /> View Coaster Gallery
                       </button>
@@ -312,48 +312,48 @@ function FleetSection() {
                   ) : null}
                 </div>
 
-                <h3 className="mt-4 font-heading text-xl font-bold leading-snug text-[#FFFFFF]">{car.name}</h3>
+                <h3 className="mt-4 font-heading text-xl font-bold leading-snug text-[color:var(--text-main)]">{car.name}</h3>
 
-                <div className="mt-4 grid gap-2 text-sm text-[#C7D2FE]">
+                <div className="mt-4 grid gap-2 text-sm text-[color:var(--text-body)]">
                   <p className="glass-soft flex items-center gap-2">
-                    <Users size={16} className="text-[#F5B841]" /> {car.passengers}
+                    <Users size={16} className="text-[color:var(--gold-500)]" /> {car.passengers}
                   </p>
                   <p className="glass-soft flex items-center gap-2">
-                    <BriefcaseBusiness size={16} className="text-[#F5B841]" /> {car.luggage}
+                    <BriefcaseBusiness size={16} className="text-[color:var(--gold-500)]" /> {car.luggage}
                   </p>
                   <p className="glass-soft flex items-center gap-2">
-                    <Wind size={16} className="text-[#F5B841]" /> {car.ac}
+                    <Wind size={16} className="text-[color:var(--gold-500)]" /> {car.ac}
                   </p>
                   <p className="glass-soft">{car.bestUse}</p>
                 </div>
 
                 <div className="mt-4 grid gap-2 text-sm">
-                  <p className="glass-soft text-[#FFFFFF]">
-                    <span className="font-semibold text-[#F5B841]">Per KM Rate:</span>{' '}
+                  <p className="glass-soft text-[color:var(--text-main)]">
+                    <span className="font-semibold text-[color:var(--gold-500)]">Per KM Rate:</span>{' '}
                     {rates ? `${rates.oneWayRate.toFixed(2)} PKR (One Way)` : 'N/A'}
                   </p>
-                  <p className="glass-soft text-[#FFFFFF]">
-                    <span className="font-semibold text-[#F5B841]">Return Rate:</span>{' '}
+                  <p className="glass-soft text-[color:var(--text-main)]">
+                    <span className="font-semibold text-[color:var(--gold-500)]">Return Rate:</span>{' '}
                     {rates
                       ? rates.upDownRate
                         ? `${rates.returnRate.toFixed(2)} PKR per KM (Up & Down)`
                         : `${rates.returnRate.toFixed(2)} PKR per KM`
                       : 'N/A'}
                   </p>
-                  <p className="glass-soft flex items-center gap-2 text-[#C7D2FE]">
-                    <ArrowLeftRight size={15} className="text-[#F5B841]" />
+                  <p className="glass-soft flex items-center gap-2 text-[color:var(--text-body)]">
+                    <ArrowLeftRight size={15} className="text-[color:var(--gold-500)]" />
                     One Way and Return booking available
                   </p>
                 </div>
 
                 {isCoaster ? (
-                  <div className="mt-4 rounded-2xl border border-[rgba(245,184,65,0.33)] bg-[rgba(245,184,65,0.08)] p-3 text-sm text-[#FFFFFF]">
-                    <p className="font-heading text-base font-bold text-[#F5B841]">Toyota Coaster Pakistan</p>
+                  <div className="mt-4 rounded-2xl border border-[rgba(245,184,65,0.33)] bg-[rgba(245,184,65,0.08)] p-3 text-sm text-[color:var(--text-main)]">
+                    <p className="font-heading text-base font-bold text-[color:var(--gold-500)]">Toyota Coaster Pakistan</p>
                     <p className="mt-1">20 Seats</p>
-                    <p className="mt-1 text-[#C7D2FE]">
+                    <p className="mt-1 text-[color:var(--text-body)]">
                       Best for group tours, weddings, company transport and long routes.
                     </p>
-                    <p className="mt-2 font-bold text-[#FFFFFF]">Rate: 300 PKR / KM Up & Down</p>
+                    <p className="mt-2 font-bold text-[color:var(--text-main)]">Rate: 300 PKR / KM Up & Down</p>
                   </div>
                 ) : null}
               </motion.article>

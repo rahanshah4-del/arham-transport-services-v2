@@ -16,6 +16,7 @@ import SectionHeading from './SectionHeading'
 const initialFormValues = {
   customerName: '',
   phoneNumber: '',
+  cnic: '',
   pickupCity: '',
   dropOffCity: '',
   pickupDate: '',
@@ -165,7 +166,7 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
         : `${vehicleRates.returnRate.toFixed(2)} PKR/km`
       : 'N/A'
 
-    const bookingMessage = `Assalam-o-Alaikum Arham Transport Services, I want to book a car.\n\nCustomer Name: ${formValues.customerName}\nPhone Number: ${formValues.phoneNumber}\nPickup City: ${formValues.pickupCity}\nDrop-off City: ${formValues.dropOffCity}\nRoute: ${routeInfo}\nPickup Date: ${formValues.pickupDate}\nPickup Time: ${formValues.pickupTime}\nCar Type: ${formValues.carType}\nTrip Type: ${formValues.tripType}\nPer KM Rate (One Way): ${oneWayRateText}\nPer KM Rate (Return): ${returnRateText}\nService Category: ${formValues.serviceCategory}\nBase fare / KM fare: ${baseKmText}\nVehicle charges: ${vehicleChargesText}\nRefreshment charges: ${refreshmentChargesText}\nTotal estimated fare: ${totalFareText}\nPassengers: ${formValues.passengers}\nSpecial Request: ${formValues.message || 'No special request'}`
+    const bookingMessage = `Assalam-o-Alaikum Arham Transport Services, I want to book a car.\n\nCustomer Name: ${formValues.customerName}\nPhone Number: ${formValues.phoneNumber}\nCNIC: ${formValues.cnic || 'Not provided'}\nPickup City: ${formValues.pickupCity}\nDrop-off City: ${formValues.dropOffCity}\nRoute: ${routeInfo}\nPickup Date: ${formValues.pickupDate}\nPickup Time: ${formValues.pickupTime}\nCar Type: ${formValues.carType}\nTrip Type: ${formValues.tripType}\nPer KM Rate (One Way): ${oneWayRateText}\nPer KM Rate (Return): ${returnRateText}\nService Category: ${formValues.serviceCategory}\nBase fare / KM fare: ${baseKmText}\nVehicle charges: ${vehicleChargesText}\nRefreshment charges: ${refreshmentChargesText}\nTotal estimated fare: ${totalFareText}\nPassengers: ${formValues.passengers}\nSpecial Request: ${formValues.message || 'No special request'}`
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(bookingMessage)}`
 
@@ -179,9 +180,9 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
     <section id="booking" className="section-wrap py-20 lg:py-24">
       <div className="section-container">
         <SectionHeading
-          eyebrow="Booking"
-          title="Premium Booking Form"
-          description="Submit complete trip details and send instant booking to WhatsApp with fare summary and selected service category."
+          eyebrow="Customer Details"
+          title="User Info / Customer Details"
+          description="Share customer and trip details, then send the complete booking request to WhatsApp with the fare summary and selected service category."
         />
 
         <motion.div
@@ -226,6 +227,21 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
                 placeholder="03XXXXXXXXX"
               />
               {errors.phoneNumber ? <p className="error-text">{errors.phoneNumber}</p> : null}
+            </div>
+
+            <div>
+              <label htmlFor="cnic" className="form-label">
+                CNIC Optional
+              </label>
+              <input
+                id="cnic"
+                name="cnic"
+                type="text"
+                className="form-input"
+                value={formValues.cnic}
+                onChange={handleChange}
+                placeholder="Optional CNIC"
+              />
             </div>
 
             <div>
@@ -375,7 +391,7 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
 
             <div className="md:col-span-2">
               <label htmlFor="message" className="form-label">
-                Message / Special Request
+                Special Request
               </label>
               <textarea
                 id="message"
@@ -389,9 +405,9 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
             </div>
 
             <div className="md:col-span-2 grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-              <div className="glass-soft text-sm text-[#C7D2FE]">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Vehicle Details Card</p>
-                <p className="mt-1 break-words font-bold text-[#FFFFFF]">
+              <div className="glass-soft text-sm text-[color:var(--text-body)]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Vehicle Details Card</p>
+                <p className="mt-1 break-words font-bold text-[color:var(--text-main)]">
                   {formValues.carType || 'Select a vehicle to view rates'}
                 </p>
                 <p className="mt-2">
@@ -408,8 +424,8 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
                 </p>
               </div>
 
-              <div className="glass-soft text-sm text-[#C7D2FE]">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Fare Breakdown Preview</p>
+              <div className="glass-soft text-sm text-[color:var(--text-body)]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Fare Breakdown Preview</p>
                 <p className="mt-1">With Refreshment: + Rs 2,000</p>
                 <p>Without Refreshment: Rs 0</p>
                 <p className="mt-2 break-words">
@@ -432,7 +448,7 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
                       ? 'Rs 2,000'
                       : 'Rs 0'}
                 </p>
-                <p className="font-bold text-[#FFFFFF]">
+                <p className="font-bold text-[color:var(--text-main)]">
                   Total estimated fare:{' '}
                   {fareBreakdown
                     ? currencyFormatter.format(fareBreakdown.totalEstimatedFare)
@@ -451,7 +467,7 @@ function BookingFormSection({ whatsappNumber, phoneNumber }) {
             </div>
 
             {statusMessage ? (
-              <p className="md:col-span-2 text-sm font-semibold text-[#F5B841]">{statusMessage}</p>
+              <p className="md:col-span-2 text-sm font-semibold text-[color:var(--gold-500)]">{statusMessage}</p>
             ) : null}
           </form>
         </motion.div>

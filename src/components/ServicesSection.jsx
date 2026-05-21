@@ -35,11 +35,11 @@ function ServicesSection() {
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >
-                <div className="inline-flex rounded-xl border border-[rgba(245,184,65,0.35)] bg-[rgba(245,184,65,0.12)] p-2 text-[#F5B841]">
+                <div className="inline-flex rounded-xl border border-[rgba(245,184,65,0.35)] bg-[rgba(245,184,65,0.12)] p-2 text-[color:var(--gold-500)]">
                   <Icon size={19} />
                 </div>
-                <h3 className="mt-4 font-heading text-xl font-bold text-[#FFFFFF]">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#C7D2FE]">{service.description}</p>
+                <h3 className="mt-4 font-heading text-xl font-bold text-[color:var(--text-main)]">{service.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[color:var(--text-body)]">{service.description}</p>
               </motion.article>
             )
           })}

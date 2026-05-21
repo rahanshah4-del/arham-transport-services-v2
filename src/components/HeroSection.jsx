@@ -34,16 +34,12 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
   }
 
   return (
-    <section id="home" className="section-wrap relative overflow-hidden py-20 lg:py-24">
-      <img src="/hero/city.jpg" alt="Dark city skyline" className="absolute inset-0 -z-20 h-full w-full object-cover" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(110deg,rgba(7,23,57,0.94)_15%,rgba(10,31,68,0.9)_48%,rgba(13,42,92,0.82)_100%)]" />
-      <div className="absolute -left-24 top-20 -z-10 h-56 w-56 rounded-full bg-[rgba(245,184,65,0.2)] blur-3xl" />
-      <div className="absolute -right-20 bottom-20 -z-10 h-60 w-60 rounded-full bg-[rgba(13,42,92,0.8)] blur-3xl" />
+    <section id="home" className="section-wrap relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_58%,#eef2ff_100%)] py-16 lg:py-20">
 
       <div className="section-container grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
         <div className="relative min-w-0 space-y-7">
           <motion.div
-            className="inline-flex items-center gap-2 rounded-full border border-[rgba(245,184,65,0.45)] bg-[rgba(245,184,65,0.12)] px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#F5B841]"
+            className="inline-flex items-center gap-2 rounded-full border border-[rgba(245,184,65,0.45)] bg-[rgba(245,184,65,0.12)] px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--gold-500)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -52,7 +48,7 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
           </motion.div>
 
           <motion.h1
-            className="font-heading text-3xl font-extrabold leading-tight text-[#FFFFFF] sm:text-5xl lg:text-6xl"
+            className="font-heading text-3xl font-extrabold leading-tight text-[color:var(--text-main)] sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -61,7 +57,7 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
           </motion.h1>
 
           <motion.p
-            className="max-w-2xl text-sm leading-relaxed text-[#C7D2FE] sm:text-base lg:text-lg"
+            className="max-w-2xl text-sm leading-relaxed text-[color:var(--text-body)] sm:text-base lg:text-lg"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -99,20 +95,19 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <div className="absolute right-0 top-0 h-20 w-20 rounded-bl-full bg-[rgba(245,184,65,0.16)]" />
             <img
               src="/cars/yaris.png"
               alt="Premium transport car"
-              className="h-44 w-full rounded-2xl border border-[rgba(245,184,65,0.22)] object-cover sm:h-56"
+              className="h-44 w-full rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#f8fafc] object-contain p-3 sm:h-56"
             />
-            <div className="mt-4 grid grid-cols-1 gap-3 text-sm text-[#C7D2FE] sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-1 gap-3 text-sm text-[color:var(--text-body)] sm:grid-cols-2">
               <div className="glass-soft animate-float">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Coverage</p>
-                <p className="mt-1 text-lg font-bold text-[#FFFFFF]">All Pakistan</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Coverage</p>
+                <p className="mt-1 text-lg font-bold text-[color:var(--text-main)]">All Pakistan</p>
               </div>
               <div className="glass-soft animate-float [animation-delay:0.7s]">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Office Number</p>
-                <p className="mt-1 text-lg font-bold text-[#FFFFFF]">{officeNumber.display}</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Office Number</p>
+                <p className="mt-1 text-lg font-bold text-[color:var(--text-main)]">{officeNumber.display}</p>
               </div>
             </div>
           </motion.div>
@@ -127,8 +122,8 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: 0.12 * index }}
               >
-                <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Phone</p>
-                <p className="mt-1 text-sm font-bold text-[#FFFFFF]">{phone.display}</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Phone</p>
+                <p className="mt-1 text-sm font-bold text-[color:var(--text-main)]">{phone.display}</p>
               </motion.div>
             ))}
             <motion.div
@@ -138,8 +133,8 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: 0.36 }}
             >
-              <p className="text-xs uppercase tracking-[0.16em] text-[#F5B841]">Email</p>
-              <p className="mt-1 break-all text-sm font-bold text-[#FFFFFF]">ARHAMTRANSPORT477@GMAIL.COM</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Email</p>
+              <p className="mt-1 break-all text-sm font-bold text-[color:var(--text-main)]">ARHAMTRANSPORT477@GMAIL.COM</p>
             </motion.div>
           </div>
         </div>
@@ -150,8 +145,8 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <h2 className="font-heading text-2xl font-bold text-[#FFFFFF]">Premium Quick Booking</h2>
-          <p className="mt-2 text-sm text-[#C7D2FE]">
+          <h2 className="font-heading text-2xl font-bold text-[color:var(--text-main)]">Premium Quick Booking</h2>
+          <p className="mt-2 text-sm text-[color:var(--text-body)]">
             Fill details and send booking request directly on WhatsApp.
           </p>
 
@@ -303,7 +298,7 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
 
           <div className="premium-divider my-4" />
 
-          <div className="grid gap-2 text-xs text-[#C7D2FE] sm:grid-cols-3">
+          <div className="grid gap-2 text-xs text-[color:var(--text-body)] sm:grid-cols-3">
             <p className="flex items-center gap-1">
               <MapPinned size={14} /> All Pakistan
             </p>

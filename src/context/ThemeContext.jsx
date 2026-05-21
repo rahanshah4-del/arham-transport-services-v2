@@ -13,8 +13,8 @@ function resolveTheme(theme) {
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') return 'system'
-    return localStorage.getItem('ats-theme') || 'system'
+    if (typeof window === 'undefined') return 'light'
+    return localStorage.getItem('ats-theme') || 'light'
   })
   const [resolvedTheme, setResolvedTheme] = useState(() => resolveTheme(theme))
 

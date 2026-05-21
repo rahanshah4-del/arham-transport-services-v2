@@ -21,22 +21,22 @@ function CityBookingSection() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55 }}
           >
-            <h3 className="font-heading text-xl font-bold text-[#FFFFFF]">How Booking Works</h3>
-            <ol className="mt-4 space-y-3 text-sm text-[#C7D2FE]">
+            <h3 className="font-heading text-xl font-bold text-[color:var(--text-main)]">How Booking Works</h3>
+            <ol className="mt-4 space-y-3 text-sm text-[color:var(--text-body)]">
               <li className="glass-soft">1. Select pickup city, drop city, and vehicle.</li>
               <li className="glass-soft">2. Add date, time, trip type, and service category.</li>
               <li className="glass-soft">3. Confirm instantly via WhatsApp for fast dispatch.</li>
             </ol>
 
-            <div className="mt-4 grid gap-2 text-xs text-[#C7D2FE] sm:grid-cols-3">
+            <div className="mt-4 grid gap-2 text-xs text-[color:var(--text-body)] sm:grid-cols-3">
               <div className="glass-soft flex items-center gap-2">
-                <Route size={14} className="text-[#F5B841]" /> All Pakistan
+                <Route size={14} className="text-[color:var(--gold-500)]" /> All Pakistan
               </div>
               <div className="glass-soft flex items-center gap-2">
-                <Timer size={14} className="text-[#F5B841]" /> On-Time Pickup
+                <Timer size={14} className="text-[color:var(--gold-500)]" /> On-Time Pickup
               </div>
               <div className="glass-soft flex items-center gap-2">
-                <Shield size={14} className="text-[#F5B841]" /> Safe Dispatch
+                <Shield size={14} className="text-[color:var(--gold-500)]" /> Safe Dispatch
               </div>
             </div>
           </motion.div>
@@ -48,12 +48,12 @@ function CityBookingSection() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, delay: 0.1 }}
           >
-            <h3 className="font-heading text-xl font-bold text-[#FFFFFF]">Major City Network</h3>
+            <h3 className="font-heading text-xl font-bold text-[color:var(--text-main)]">Major City Network</h3>
             <div className="mt-4 flex max-h-[330px] flex-wrap gap-2 overflow-y-auto pr-1">
               {pakistanCities.map((city) => (
                 <span
                   key={city}
-                  className="rounded-full border border-[rgba(245,184,65,0.26)] bg-[rgba(10,31,68,0.65)] px-3 py-1 text-xs font-semibold text-[#C7D2FE]"
+                  className="rounded-full border border-[rgba(15,23,42,0.08)] bg-[#ffffff] px-3 py-1 text-xs font-semibold text-[color:var(--text-body)] shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
                 >
                   {city}
                 </span>
