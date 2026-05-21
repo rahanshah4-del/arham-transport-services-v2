@@ -16,7 +16,6 @@ import {
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import logo from '/logo/ats-logo.png'
-import { ThemeToggle } from './ThemeToggle'
 
 const navLinks = [
   { label: 'Home', href: '#home', icon: Home },
@@ -152,7 +151,6 @@ function Navbar({ whatsappLink }) {
               </nav>
 
               <div className="flex shrink-0 items-center gap-2">
-                <ThemeToggle />
                 <a
                   href={whatsappLink}
                   target="_blank"
@@ -192,7 +190,7 @@ function Navbar({ whatsappLink }) {
                 </button>
               </div>
 
-              <div className="mt-3 grid gap-2 min-[430px]:grid-cols-2">
+                  <div className="mt-3 grid gap-2 min-[430px]:grid-cols-2">
                 <div className="min-[430px]:col-span-2 flex gap-2">
                   <a
                     href={whatsappLink}
@@ -208,9 +206,6 @@ function Navbar({ whatsappLink }) {
                   >
                     Book Now
                   </a>
-                  <div className="shrink-0">
-                    <ThemeToggle />
-                  </div>
                 </div>
               </div>
 
@@ -223,10 +218,7 @@ function Navbar({ whatsappLink }) {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.24, ease: 'easeInOut' }}
                   >
-                    <div className="mb-3 flex items-center justify-between gap-3">
-                      <span className="text-xs font-semibold text-[#64748b]">Theme</span>
-                      <ThemeToggle />
-                    </div>
+                    
                     <nav className="grid gap-2">
                       {navLinks.map((link) => {
                         const Icon = link.icon

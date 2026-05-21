@@ -61,6 +61,19 @@ function ContactSection({ phoneNumbers, officeNumber, email, whatsappLink }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.20 }}
+          >
+            <MapPin size={18} className="text-[color:var(--gold-500)]" />
+            <p className="mt-3 text-xs uppercase tracking-[0.16em] text-[color:var(--gold-500)]">Address</p>
+            <p className="mt-1 text-lg font-bold text-[color:var(--text-main)]">{officeNumber.address || '08 Jade Parkview City Lahore'}</p>
+            <p className="mt-3 text-sm font-semibold text-[color:var(--text-body)]">Visit Our Office</p>
+          </motion.article>
+
+          <motion.article
+            className="glass-panel min-w-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.45, delay: 0.24 }}
           >
             <Mail size={18} className="text-[color:var(--gold-500)]" />

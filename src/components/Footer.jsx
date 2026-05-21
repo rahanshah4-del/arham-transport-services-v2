@@ -21,10 +21,21 @@ function Footer({ officeNumber }) {
 
           <div className="premium-divider my-5" />
 
-          <div className="space-y-1 text-sm text-[color:var(--text-body)]">
-            <p>Office Number: {officeNumber.display}</p>
-            <p>Web Developer: Nexora</p>
-            <p>Developed By: Rahan Shah</p>
+          <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="text-sm text-[color:var(--text-body)]">
+              <p className="font-semibold">Office Number: {officeNumber.display}</p>
+              <p className="mt-1">Address: {officeNumber.address || '08 Jade Parkview City Lahore'}</p>
+            </div>
+
+            <div className="min-w-[220px] rounded-xl border border-[rgba(15,23,42,0.06)] bg-[#ffffff] px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#06152f] text-white font-bold">N</div>
+                <div>
+                  <p className="text-sm font-semibold">Web Developer: Nexora</p>
+                  <p className="mt-1 text-xs text-[color:var(--text-body)]">Developed by Rahan Shah</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

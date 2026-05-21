@@ -311,6 +311,9 @@ function HeroSection({ whatsappNumber, phoneNumbers, officeNumber, primaryPhoneL
             <p className="flex items-start gap-1 break-words sm:col-span-3">
               <Phone size={14} /> Call: {phoneNumbers[0].display} | {phoneNumbers[1].display}
             </p>
+            <p className="flex items-start gap-1 break-words sm:col-span-3">
+              <MapPinned size={14} /> Address: {officeNumber.address || '08 Jade Parkview City Lahore'}
+            </p>
           </div>
         </motion.aside>
       </div>

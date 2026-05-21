@@ -20,6 +20,7 @@ const officeNumber = {
   label: 'Office Number',
   display: '0331-6114747',
   dial: '+923316114747',
+  address: '08 Jade Parkview City Lahore',
 }
 
 const emailAddress = 'ARHAMTRANSPORT477@GMAIL.COM'
